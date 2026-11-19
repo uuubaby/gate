@@ -55,6 +55,7 @@ jobs:
           CHECK_WORKER: "https://${{ secrets.DOMAIN }}/check?sstp=vpn:vpn@"
           CHECK_CONCURRENCY: ${{ github.event.inputs.concurrency || '32' }}
           CHECK_TIMEOUT: ${{ github.event.inputs.timeout || '25' }}
+          EDGE_HOSTS: "www.gov.il:443,kickstarter.com:2083,linear.app:2053,www.wto.org:2053,www.vmware.com:443,www.dentoncounty.gov:8443,cdn.ctn32.us.kg:443,cf.877774.xyz:443,cf.nyanya.moe:443,cdn.204910.best:443,p.etime.vip:443,saas.sin.fan:443"
           MAX_CHECK_NODES: ${{ github.event.inputs.max_nodes || '0' }}
           MIN_SUCCESS_RATIO: '0'
         run: python vpngate.py
